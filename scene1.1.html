@@ -1,0 +1,86 @@
+<!-- Forest -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Journy of the Soul - Forest</title> <!-- TO DO: Change Title -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">  
+    <script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script defer src="script.js" charset="utf-8"></script>
+  </head>
+  <body >
+    <!-- Adds scene backdrop to page -->
+    <div class="backdrop  forest"> <!-- TO DO: Add scene backdrop in class  --> 
+    <!-- Adds whisp to page -->
+<!-- Slide  -->
+<div class="instructions" > 
+    <p> Help Snake and Rabbit <br>
+    Mindful Seeing: Please pay attention to the surroundings around you.  <br> 
+     What do you see and what do you hear?</p> 
+    <p id="hint"> </p>
+    </div>  
+      <!-- Pop-up Dialogue Box -->
+      <button data-modal-target="#modal" class="carrot" onclick="playSound('assets/sound/rabbit/Rabbit 3.mp3')" ><img src="assets/images/carrot.png" alt="carrot"></button> 
+        <div class="modal" id="modal">
+          <!-- Slide 1 -->
+          <div class="dialogueContainer characterRight" > 
+            <img src="assets/images/DialogueBoxes/Rabbit.png" alt="">
+            <p>Oh…my… seems like it was the wind who took my carrot. Sorry snake, I did it again.         </p> 
+            <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/snake/Snake 3.wav')">Next &#10095; </a>
+          </div>
+          <!-- Slide 2 -->
+          <div class="dialogueContainer characterRight" > <!-- TO DO: Change character name-->
+              <img src="assets/images/DialogueBoxes/Snake.png" alt="">
+              <p>Rabbit, it’s not okay to judge others  before you figure out what really happened.  Please think before you take action. It really hurt my feelings this time. 
+              </p> <!--Change dialogue-->
+            <!--TO DO: Add Prev/Next buttons -->
+            <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/rabbit/Rabbit 4.mp3')">Next &#10095; </a>
+          </div>
+          <!-- Slide 3 -->
+          <div class="dialogueContainer characterRight" > 
+            <img src="assets/images/DialogueBoxes/Rabbit.png" alt="">
+            <p>I’m so sorry Snake… I just… I just… really like carrots. I promise I’ll look  around my surroundings before I blame you for taking my carrot. I promise…        </p> 
+            <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/snake/Snake 4.wav')">Next &#10095; </a>
+          </div>
+          <!-- Slide 4 -->
+          <div class="dialogueContainer characterRight" > <!-- TO DO: Change character name-->
+            <img src="assets/images/DialogueBoxes/Snake.png" alt="">
+            <p> Fine fine… just don’t do it again. Please, learn from your mistakes. When I go look for food and if I find a carrot, I will give you one, since you love them so much.   </p> <!--Change dialogue-->
+          <!--TO DO: Add Prev/Next buttons -->
+          <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/rabbit/Rabbit 5.mp3')">Next &#10095; </a>
+          </div>
+            <!-- Slide 5 -->
+          <div class="dialogueContainer characterRight" > 
+            <img src="assets/images/DialogueBoxes/Rabbit.png" alt="">
+            <p>Thanks for helping us, little Wisp. I have a special carrot for you, and only you. 
+            </p> 
+            <a id="next" class="next" onclick="plusSlides(1); " >Next &#10095; </a>
+          </div>  
+          <div class="dialogueContainer plainBox" >
+            <img src="assets/images/DialogueBoxes/Plain.png" >
+            <img src="assets/images/carrotsmall.png" class="carrotPrize" >
+            <p style="font-size: 3vh; text-align: center;">Rabbit has given you a golden carrot <br> for helping them solve thier conflict.</p>
+            <a id="next" class="next" href="scene2.html" >Next &#10095; </a>
+          </div>
+          </div> <!--Modal closing  tag-->
+        <div id="overlay"></div> 
+      </div> <!--Backdrop closing tag -->
+      <!-- background music -->
+      <audio class="forestAudio" autoplay loop>
+        <source src="assets/sound/backgrounds/forestSoundBackground.wav" >  
+      </audio>  
+      <script>
+        const myTimeout = setTimeout(myGreeting, 5000);
+        function myGreeting() {
+          document.getElementById("hint").innerHTML = "Hint: Look for the Carrot"
+        }
+      </script>
+  </body>
+</html>
+<!--  <a id="prev" class="prev hidden" onclick="plusSlides(-1)">&#10094; Previous</a>
+      <a id="next" class="next" onclick="plusSlides(1)">Next &#10095; </a>
+      <a id="done" class="hidden" href="scene3.html">DONE </a>
+-->

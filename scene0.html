@@ -1,0 +1,67 @@
+<!-- Void Scene -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Journy of the Soul - Void</title> 
+    <link rel="stylesheet" href="style.css">
+<!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">  
+    <script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script defer src="script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- Adds scene backdrop to page -->
+    <div class="void"> 
+      <!-- Pop-up Dialogue Box -->
+      <p id="hint" style="color: white;"></p>
+      <button data-modal-target="#modal"  onclick="playSound('assets/sound/wisp/Wiper 1.mp3')" class="wisp-still" ><img src="assets/gifs/wisp.gif" alt="wisp" > </button> 
+        <div class="modal" id="modal">
+            <!-- Dialouge Template -->
+            <!-- Slide 1 -->
+            <div class="dialogueContainer characterLeft" > 
+              <img src="assets/images/DialogueBoxes/Wisp.png" alt="">
+              <p>Where am I?</p> 
+              <a id="next" class="next " onclick="plusSlides(1); playSound('assets/sound/narrator/Narrator1.wav')">Next &#10095; </a>
+          </div>
+            <!-- Slide 2 -->
+            <div class="dialogueContainer plainBox" > 
+                <img src="assets/images/DialogueBoxes/Plain.png" alt="">
+                
+                <p>In a land different from all the other worlds, <br>
+                A world where humans aren't born from humans, But from empty souls. </p> 
+                <a style="bottom: -3.5em;" id="next" class="next " onclick="plusSlides(1); playSound('assets/sound/narrator/Narrator2.wav')">Next &#10095; </a>
+            </div>
+            <!-- Slide 3 -->
+            <div class="dialogueContainer plainBox" >
+                <img src="assets/images/DialogueBoxes/Plain.png" alt="">
+                <p >What do you want to become? If words were <br>
+                  swords and actions determined your fate, <br>
+                What kind of decisions would you make?</p> 
+
+                <a id="next" class="next" onclick="plusSlides(1)">Next &#10095; </a>
+            </div>
+            <!-- Slide 3 -->
+            <div class="dialogueContainer plainBox" > 
+                <img src="assets/images/DialogueBoxes/Plain.png" alt="">    
+                <p > Are you ready to begin? <br>
+                Click "Start"</p> 
+                <a id="start" class="start" href="scene1.html">START</a>
+            </div> 
+          </div><!--Modal closing  tag-->
+        </div>  <!--Backdrop closing tag -->
+        <div id="overlay"></div> 
+    <!-- background sound -->
+    <audio class="voidAudio" autoplay loop>
+        <source src="assets/sound/backgrounds/Black background.mp3" >  
+    </audio>
+    <script>
+      const myTimeout = setTimeout(myHint, 5000);
+      function myHint() {
+        document.getElementById("hint").innerHTML = "Hint: Click Anywhere"
+      }
+    </script>
+  </body>
+</html>

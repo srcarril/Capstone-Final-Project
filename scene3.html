@@ -1,0 +1,110 @@
+<!-- Mountain  -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Journy of the Soul - Mountain</title> <!-- TO DO: Change Title -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">  
+    <script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script defer src="script.js" charset="utf-8"></script>
+  </head>
+  <body class="long">
+    <!-- Adds scene backdrop to page -->
+    <div class="backdrop mountain"> 
+    <!-- Adds whisp to page -->
+    <img class="wisp" src="assets//gifs/wispWalking.gif" alt="wisp" > 
+    <!-- Pop-up Dialogue Box -->
+      <button onclick="playSound('assets/sounds/wisp/WIsper 9.mp3')" data-modal-target="#modal" class="character" ><img src="assets/images/characters/penguin.png" alt=""></button> 
+        <div class="modal" id="modal">
+          <!-- Slide 1 -->
+        <div class="dialogueContainer characterLeft" > <!-- TO DO: Change character name-->
+            <img src="assets/images/DialogueBoxes/Wisp.png" alt="">
+              <p class="wispFix1" >*Panting* how much further do <br> I need to climb? </p> 
+              <a id="next" class="next nextFix1" onclick="plusSlides(1); playSound('assets/sounds/penguin/penpenguin 1.mp3')">Next &#10095; </a>
+        </div>
+        <!-- Slide 3 -->
+        <div class="dialogueContainer characterRight" > 
+          <img src="assets/images/DialogueBoxes/Penguin.png" alt="">
+            <p>Hey, do you need some help? <br>
+              I know a way to help you. </p> 
+            <a id="next" class="next " onclick="plusSlides(1) ; playSound('assets/sounds/wisp/Wisper 10.mp3')">Next &#10095; </a>
+        </div>
+      <!-- Slide 4 -->
+      <div class="dialogueContainer characterLeft" > <!-- TO DO: Change character name-->
+          <img src="assets/images/DialogueBoxes/Wisp.png" alt="">
+            <p class="wispFix1">You can? Please help me………</p> 
+            <a id="next" class="next nextFix1" onclick="plusSlides(1); playSound('assets/sounds/penguin/penpenguin 2.mp3')">Next &#10095; </a>
+        </div>
+      <!-- Slide 5 -->
+        <div class="dialogueContainer characterRight" > 
+            <img src="assets/images/DialogueBoxes/Penguin.png" alt="">
+            <p>Please breathe first, little Wisp. <br>In and out, <br>with deep breaths. </p> 
+            <a id="next" class="next" onclick="plusSlides(1)">Next &#10095; </a>
+        </div>
+        <!-- Slide 7 -->
+        <div class="dialogueContainer bodyScan" > <!-- TO DO: Change character name-->
+          <img id="animate" src="assets/gifs/bodyScan.gif" class="bodyScanGif" alt="">
+          <img src="assets/images/bodyScanFull.png" class="bodyScanMask"alt="">
+          <div class="bodyMedInst">
+            <p id="guide" class="guide">Press "Start" to Begin or "Next" to skip</p>
+            <button class="startMed" onclick="meditate(); medText()">Start</button>
+            <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sounds/wisp/Wisper 11.mp3')">Next &#10095; </a>          
+          </div>
+          </div>
+        <!-- Slide 8 -->
+      <div class="dialogueContainer characterLeft" > 
+        <img src="assets/images/DialogueBoxes/Wisp.png" alt="">
+          <p>I…I can move!! Thank you so much, ‘PENGUIN’ ! </p> 
+          <a id="next" class="next " onclick="plusSlides(1); playSound('assets/sounds/penguin/penpenguin 3.mp3')">Next &#10095; </a>
+      </div>  
+        <!-- Slide 8 -->
+        <div class="dialogueContainer characterRight" > 
+          <img src="assets/images/DialogueBoxes/Penguin.png" alt="">
+          <p>Great! You can continue your journey now! Remember to come back and visit with your new self! </p> 
+          <a id="next" class="next" onclick="plusSlides(1)">Next &#10095; </a>
+      </div>
+      <!-- Slide 9 -->
+      <div class="dialogueContainer plainBox" > 
+        <img src="assets/images/DialogueBoxes/Plain.png" alt="">
+          <p>Click "DONE" to move on to the next section </p> 
+          <a  id="start" class="start " href="scene4.html">Done &#10095; </a>
+      </div> 
+    </div> <!--Modal closing  tag-->
+    <div id="overlay"></div> 
+    </div> <!--Backdrop closing tag -->
+      <!-- Background Music -->
+  <audio class="forestAudio" autoplay loop>
+    <source src="assets/sound/backgrounds/snowy sound background.mp3" >  
+  </audio>
+  <script>
+    function meditate() {
+      let id = null;
+      const elem = document.getElementById("animate");   
+      let pos = -350;
+      clearInterval(id);
+      id = setInterval(frame, 90);
+      function frame() {
+        if (pos == -500) {
+          clearInterval(id);
+        } else {
+          pos--; 
+          elem.style.top = pos + "px"; 
+        }
+      }
+    }
+
+    
+        function medText() {
+          document.getElementById("guide").innerHTML = "Take deep breaths and focous on each part of the body as the blue wave fills the body"
+        }
+      </script>
+    </script>      
+  </body>
+</html>
+<!--  <a id="prev" class="prev hidden" onclick="plusSlides(-1)">&#10094; Previous</a>
+      <a id="next" class="next" onclick="plusSlides(1)">Next &#10095; </a>
+      <a id="done" class="hidden" href="scene3.html">DONE </a>
+-->

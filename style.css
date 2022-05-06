@@ -1,0 +1,328 @@
+/* 
+COLORS
+Rabbit: #97582f
+Sheep: #60405e 
+Wisp: #3676e8
+Snake: #9e8665
+Plain: #9b795d
+*/
+* {
+    box-sizing: border-box;
+    border:none;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+    font-family: 'Patrick Hand SC', cursive;
+}
+/* Hides scrollbar */
+::-webkit-scrollbar {   
+    display:none;
+}
+
+/* backdrops */
+.backdrop{
+    position: relative;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1060px;
+    width: 300vw;
+}
+.void{
+    background-color: black;
+    background-size: cover;
+}
+.forest{
+        background-image: url("assets/images/backdrop/forestBackdrop.png");
+    }
+.village {
+    background-image: url("assets/images/backdrop/backdrop-village.png");
+    height: 100vh;
+}
+.mountain {
+    background-image: url("assets/images/backdrop/backdrop-mountian.png");
+    height: 100vh;
+}
+.mountain-top{
+    background-image: url("assets/images/backdrop/backdrop-mountian-top.png");
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;}
+
+/* Characters */
+.wisp-still{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    z-index: 2;
+}
+.wisp-still img{
+width: 100vw;
+}
+img.final-wisp{
+    height: auto;
+    max-height: 1000px;
+    width: 100vw;
+
+}
+.wisp {
+    position: sticky;
+    left: 30vw;
+    top: 30vh;
+    z-index: 1;
+    height: 50vh;
+}
+.character {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    position: absolute;
+    right: 17vw;
+    bottom: 20vh;
+    z-index: 2;
+}
+.wisp-still{
+    height: 100vh;
+}
+.carrot{
+    position: absolute;
+    top: 19vh;
+    left: 172vw;
+    background: none;
+    border: none;
+}
+.carrot img{
+    height: 10vh;
+    transform: rotate(30deg);
+    opacity: 80%;
+}
+.instructions{
+    position: fixed;
+    top: 5vh;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 1em;
+    padding: .25em;
+    background-color: rgba(238, 223, 210, .6);
+}
+#hint{
+    font-size: .75em;
+}
+.soupPot{
+    position: absolute;
+    top: 40vh;
+    left: 140vw;
+    height: 400px; 
+}
+.fire{
+    position: absolute;
+    height:30vh;
+    left: 145vw;
+    top: 45vh;
+  
+}
+.potFall{
+    position: absolute;
+    height:45vh;
+    left: 144vw;
+    top: 36vh;
+}
+/* Dialog Box */
+.modal{
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+}
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.dialogueContainer{
+    display: none;
+}
+svg{
+    fill: #3676e8;
+    stroke: #3676e8;
+}
+.prev, .next , .start{
+    cursor: pointer;
+    position: absolute;
+    bottom: -4.5em;
+    width: auto;
+    font-weight: bold;
+    font-size: 3vh;
+    transition: 0.6s ease;
+    user-select: none;
+}
+.next {
+    right: -2em;
+}
+
+.start{
+    padding: 5px;
+    right: 1em;
+}
+.bodyMedInst {
+    position: relative;
+    top: -30vh;
+    font-size: 1.5em;
+    text-align: center;
+
+} 
+
+.bodyMedInst button{
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+}
+.bodyMedInst a{
+    position: relative;
+    top: 0;
+    font-weight: 400;
+
+}
+.closeButton {
+    position: fixed;
+    top:0;
+    right: -4.5em;
+    cursor: pointer;
+    /* border: none; */
+    outline: none;
+    background: none;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+a{
+    color: black;
+    text-decoration: none;
+}
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}  
+.hidden{
+    display: none;
+}
+/* Dialog Box Background */
+.dialogueContainer{
+    justify-content: center;
+    align-items: center;
+}
+.dialogueContainer img {
+    margin: 0 auto;
+    width: 83vh;
+    position: fixed;
+    z-index: -1;
+}
+.dialogueContainer p{
+    width: 30vh;
+}
+.plainBox p{
+    width: 50vh;
+}
+
+.characterLeft p{
+    position: relative;
+    top: 1em;
+    right: 0em;
+    font-size: 3vh;
+    margin: 0 auto;  
+}
+.characterLeft .wispFix{
+    top:2em;
+    right:0;
+}
+.characterLeft .wispFix1{
+    left: 0em;
+}
+.characterLeft .nextFix{
+    top:5em;
+    right:0;
+}
+.characterLeft .nextFix1{
+    bottom:-3em;    
+    right: .5em;
+}
+.characterRight p{
+    position: relative;
+    top: 2em;
+    left: -3.5em;
+    font-size: 1.5em;
+    margin: 0 auto;   
+}
+.characterRight .next{
+    right:0;
+    bottom:-3em;
+}
+.characterRight .snake{
+    font-size: 1.25em;
+}
+.plainBox p {
+    position: relative;
+    top: 2em;
+    font-size: 3vh;
+    margin: 0 auto; 
+    right: .5em;
+}
+.plainBox .next {
+    bottom: -3.7em;
+    right:0;
+  }
+.dialogueContainer .carrotPrize{
+    
+    top: 1.5em;
+    width: 5vw;
+}
+.dialogueContainer .bodyScanMask{
+    width: 100vh;
+    height: inherit;
+    top:-65vh;
+}
+.dialogueContainer .bodyScan button{
+    position: absolute;
+    top: -10vh;
+}
+.dialogueContainer .bodyScanGif{
+    width: inherit;
+    height: 20vh;
+    top:-55vh;
+}
+
+.finalMessage{
+    text-align: center;
+    background-color: rgba(238, 223, 210, .6);
+    position: relative;
+    width: 70vh;
+    bottom: 30vh;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 2em;
+    border-radius: 10px;
+    padding: .5em;
+}
+.finalMessage a{
+    background-color: aliceblue;
+    margin: .1em;
+    padding: .1em;
+    border-radius: 10px;
+    
+
+}
+

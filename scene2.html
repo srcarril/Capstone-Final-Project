@@ -1,0 +1,124 @@
+<!-- Village -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Journy of the Soul - Village</title> <!-- TO DO: Change Title -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">  
+    <script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script defer src="script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- Adds scene backdrop to page -->
+    <div class="backdrop  village"> 
+    <!-- Adds whisp to page -->
+    <img class="wisp" src="assets//gifs/wispWalking.gif" alt="wisp" > 
+    <!-- Pot -->
+    <img id="trigger"  class="soupPot" src="assets/images/pot.png" alt="Pot stand">
+    <img  class="fire" src="assets/gifs/fire.gif" alt="fire">
+
+    <img class="potFall "src="assets/gifs/potfalling.gif" alt="">
+    <!-- Pop-up Dialogue Box -->
+      <button onclick="playSound('assets/sound/chef/Chef 1.mp3')" data-modal-target="#modal" class="character" ><img src="assets/images/characters/Sheep.png" alt=""></button> 
+        <div class="modal" id="modal">
+          <!-- Slide 1 -->
+          <div class="dialogueContainer characterRight" > 
+            <img src="assets/images/DialogueBoxes/Sheep.png" alt="">
+              
+              <p> You! You little scrub…! How dare you knock over my soup! My million-century soup!</p> 
+              <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/wisp/Wipser 5.mp3')">Next &#10095; </a>
+          </div>
+        <!-- Slide 2 -->
+        <div class="dialogueContainer characterLeft" > <!-- TO DO: Change character name-->
+            <img src="assets/images/DialogueBoxes/Wisp.png" alt="">
+              
+              <p>It…it…wasn’t on purpose…</p> <!--Change dialogue-->
+              <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/chef/Chef 2.mp3')">Next &#10095; </a>
+        </div>
+        <!-- Slide 3 -->
+        <div class="dialogueContainer characterRight" > 
+          <img src="assets/images/DialogueBoxes/Sheep.png" alt="">
+            
+            <p>Well then you should've watched where you were going! 
+              Do you think you can just leave like this? After ruining my soup? 
+              Do you know how many people I need to feed?!</p> 
+            <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/wisp/Wisper 6.mp3')">Next &#10095; </a>
+        </div>
+      <!-- Slide 4 -->
+      <div class="dialogueContainer characterLeft" > <!-- TO DO: Change character name-->
+          <img src="assets/images/DialogueBoxes/Wisp.png" alt="">
+            
+            <p>I.. I can help make it right. Here take this carrot! and Let me help fix your soup</p> 
+            <a style="bottom: -3.5vh;" id="next" class="next" onclick="plusSlides(1)">Next &#10095; </a>
+        </div>
+      <!-- Slide 5 -->
+      <div class="dialogueContainer plainBox" > 
+        <img src="assets/images/DialogueBoxes/Plain.png" alt="">
+          
+          <p>Click "Start" to help fix the soup.</p>
+          <img style="top: -1vh;" src="assets/images/carrotsmall.png" class="carrotPrize" alt=""> 
+          <a  id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/chef/Chef 3.mp3')">Next &#10095; </a>
+        </div>  
+        <!-- Slide 6 -->
+        <div class="dialogueContainer characterRight" > 
+            <img src="assets/images/DialogueBoxes/Sheep.png" alt="">
+            
+            <p>Let's see————————. <br>
+              It seems………… extremely usable and… precious!!! <br> 
+              This! This will do—----little Wisp!</p> 
+            <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/wisp/Wisper 8.mp3')">Next &#10095; </a>
+        </div>
+        <!-- Slide 7 -->
+        <div class="dialogueContainer characterLeft" > <!-- TO DO: Change character name-->
+        <img src="assets/images/DialogueBoxes/Wisp.png" alt="">
+          
+          <p>Oh really?! I'm so glad!!</p> 
+          <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sound/chef/Chef 3.mp3')">Next &#10095; </a>
+        </div>
+        <!-- Slide 8 -->
+        <div class="dialogueContainer characterRight" > 
+            <img src="assets/images/DialogueBoxes/Sheep.png" alt="">
+            
+            <p>I don’t know how you got that carrot, young wisp but this Golden carrot will save both you and me. </p> 
+            <a id="next" class="next" onclick="plusSlides(1); playSound('assets/sounds/chef/Chef 4.mp3')">Next &#10095; </a>
+        </div>
+        <!-- Slide 9 -->
+      <div class="dialogueContainer plainBox" > 
+        <img src="assets/images/DialogueBoxes/Plain.png" alt="">
+          
+          <p>Click "DONE" to move on to the next section </p> 
+          <a id="start" class="start " href="scene3.html">Done &#10095; </a>
+      </div>  
+  </div> <!--Modal closing  tag-->
+  <div id="overlay"></div> 
+  </div> <!--Backdrop closing tag -->
+  <!-- Background Music -->
+  <audio class="forestAudio" autoplay loop>
+    <source src="assets/sound/backgrounds/village songs.mp3" >  
+  </audio> 
+  <script>
+    function meditate() {
+      let id = null;
+      const elem = document.getElementById("animate");   
+      let pos = 350;
+      clearInterval(id);
+      id = setInterval(frame, 60);
+      function frame() {
+        if (pos == 0) {
+          clearInterval(id);
+        } else {
+          pos--; 
+          elem.style.left = pos + "px"; 
+        }
+      }
+    }
+    </script> 
+  </body>
+</html>
+<!--  <a id="prev" class="prev hidden" onclick="plusSlides(-1)">&#10094; Previous</a>
+      <a id="next" class="next" onclick="plusSlides(1)">Next &#10095; </a>
+      <a id="done" class="hidden" href="scene3.html">DONE </a>
+-->
